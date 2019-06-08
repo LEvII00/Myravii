@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body style="background-image: url(bg.jpg); height: 2000px; width: 2000px;">
+<h1>Очки:<span class="ochki">0</span></h1>
+<h1>Муравьи:<span class="score">0</span></h1>
+	<script>
+		let ochki = 0;
+		let score = 0;
+		let newDiv = document.createElement('div');
+			
+			newDiv.style.width = "1000px";
+			newDiv.style.position = "absolute";
+		let timer = function(){
+			let img = document.createElement("img");
+				document.body.appendChild(img);
+				img.src = "img.svg";
+				img.style.height = "100px";
+				img.style.width = "100px";
+				let Random = Math.random()*800 + "px";
+				let Random1 = Math.random()*1500 + "px";
+				img.style.position = "absolute";
+				score = score + 1;
+				document.querySelector(".score").innerHTML = score;
+				img.style.marginLeft = Random;
+				img.style.marginTop = Random1;
+				img.onclick = function(){
+					img.style.display = "none";
+					ochki = ochki + 10;
+					document.querySelector(".ochki").innerHTML = ochki;
+				}	
+			}
+			setInterval(timer,500);
+
+			let alt = function() {
+					if(ochki >= 200){
+						alert("ti krasavcheg");
+					}
+					else{
+						alert("ti loh");
+					}
+			
+			}
+			setTimeout(alt, 10000);
+
+
+				
+
+
+	</script>
+</body>
+</html>
